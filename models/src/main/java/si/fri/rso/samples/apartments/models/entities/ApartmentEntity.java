@@ -4,11 +4,11 @@ import javax.persistence.*;
 import java.time.Instant;
 
 @Entity
-@Table(name = "apartment")
+@Table(name = "apartments")
 @NamedQueries(value =
         {
-                @NamedQuery(name = "Apartment.getAll",
-                        query = "SELECT a FROM Apartment a")
+                @NamedQuery(name = "ApartmentEntity.getAll",
+                        query = "SELECT a FROM ApartmentEntity a")
         })
 public class ApartmentEntity {
 

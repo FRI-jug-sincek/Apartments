@@ -24,7 +24,7 @@ public class ApartmentBean {
     public List<Apartment> getApartments() {
 
         TypedQuery<ApartmentEntity> query = em.createNamedQuery(
-                "Apartments.getAll", ApartmentEntity.class);
+                "ApartmentEntity.getAll", ApartmentEntity.class);
 
         List<ApartmentEntity> resultList = query.getResultList();
 
