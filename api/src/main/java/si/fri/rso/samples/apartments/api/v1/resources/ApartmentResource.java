@@ -1,9 +1,7 @@
-package si.fri.rso.samples.imagecatalog.api.v1.resources;
+package si.fri.rso.samples.apartments.api.v1.resources;
 
-import si.fri.rso.samples.imagecatalog.lib.Apartment;
-import si.fri.rso.samples.imagecatalog.lib.ImageMetadata;
-import si.fri.rso.samples.imagecatalog.services.beans.ApartmentBean;
-import si.fri.rso.samples.imagecatalog.services.beans.ImageMetadataBean;
+import si.fri.rso.samples.apartments.lib.Apartment;
+import si.fri.rso.samples.apartments.services.beans.ApartmentBean;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;

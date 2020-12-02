@@ -1,7 +1,7 @@
-package si.fri.rso.samples.imagecatalog.models.converters;
+package si.fri.rso.samples.apartments.models.converters;
 
-import si.fri.rso.samples.imagecatalog.lib.Apartment;
-import si.fri.rso.samples.imagecatalog.models.entities.ApartmentEntity;
+import si.fri.rso.samples.apartments.lib.Apartment;
+import si.fri.rso.samples.apartments.models.entities.ApartmentEntity;
 
 public class ApartmentConverter {
 

@@ -1,8 +1,8 @@
-package si.fri.rso.samples.imagecatalog.services.beans;
+package si.fri.rso.samples.apartments.services.beans;
 
-import si.fri.rso.samples.imagecatalog.lib.Apartment;
-import si.fri.rso.samples.imagecatalog.models.converters.ApartmentConverter;
-import si.fri.rso.samples.imagecatalog.models.entities.ApartmentEntity;
+import si.fri.rso.samples.apartments.lib.Apartment;
+import si.fri.rso.samples.apartments.models.converters.ApartmentConverter;
+import si.fri.rso.samples.apartments.models.entities.ApartmentEntity;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
