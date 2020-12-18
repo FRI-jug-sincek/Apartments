@@ -29,15 +29,27 @@ spec:
 
 ---
 
+#apiVersion: v1
+#kind: Service
+#metadata:
+#  name: apartments
+#spec:
+#  type: LoadBalancer
+#  ports:
+#    - port: 8080
+#      protocol: TCP
+#      targetPort: server
+#  selector:
+#    app: apartments
+
 apiVersion: v1
 kind: Service
 metadata:
   name: apartments
 spec:
-  type: LoadBalancer
-  ports:
-    - port: 8080
-      protocol: TCP
-      targetPort: server
   selector:
     app: apartments
+  ports:
+    - name: web
+      port: 8080
+  type: ClusterIP
