@@ -21,7 +21,10 @@ spec:
             - name: KUMULUZEE_DATASOURCES0_USERNAME
               value: bfztibdg
             - name: KUMULUZEE_DATASOURCES0_PASSWORD
-              value: vnesi-geslo
+              valueFrom:
+                secretKeyRef:
+                  name: apartment-pass
+                  key: KUMULUZEE_DATASOURCES0_APARTMENTS_PASSWORD
           ports:
             - containerPort: 8080
               name: server
@@ -29,15 +32,27 @@ spec:
 
 ---
 
+#apiVersion: v1
+#kind: Service
+#metadata:
+#  name: apartments
+#spec:
+#  type: LoadBalancer
+#  ports:
+#    - port: 8080
+#      protocol: TCP
+#      targetPort: server
+#  selector:
+#    app: apartments
+
 apiVersion: v1
 kind: Service
 metadata:
   name: apartments
 spec:
-  type: LoadBalancer
-  ports:
-    - port: 8080
-      protocol: TCP
-      targetPort: server
   selector:
     app: apartments
+  ports:
+    - name: web
+      port: 8080
+  type: ClusterIP
