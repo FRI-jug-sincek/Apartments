@@ -20,13 +20,13 @@ public class ApartmentEntity {
     private String title;
 
     @Column(name = "tenantID")
-    private String tenantId;
+    private int tenantId;
 
     @Column(name = "location")
     private String location;
 
     @Column(name = "capacity")
-    private Integer capacity;
+    private int capacity;
 
     public Integer getId() {
         return id;
@@ -44,11 +44,11 @@ public class ApartmentEntity {
         this.title = title;
     }
 
-    public String getTenantId() {
+    public int getTenantId() {
         return tenantId;
     }
 
-    public void setTenantId(String tenantId) {
+    public void setTenantId(int tenantId) {
         this.tenantId = tenantId;
     }
 
@@ -60,11 +60,11 @@ public class ApartmentEntity {
         this.location = location;
     }
 
-    public Integer getCapacity() {
+    public int getCapacity() {
         return capacity;
     }
 
-    public void setCapacity(Integer capacity) {
+    public void setCapacity(int capacity) {
         this.capacity = capacity;
     }
 }

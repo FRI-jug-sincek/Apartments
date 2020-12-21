@@ -1,5 +1,7 @@
 package si.fri.rso.samples.apartments.services.beans;
 
+import com.kumuluz.ee.rest.beans.QueryParameters;
+import com.kumuluz.ee.rest.utils.JPAUtils;
 import si.fri.rso.samples.apartments.lib.Apartment;
 import si.fri.rso.samples.apartments.models.converters.ApartmentConverter;
 import si.fri.rso.samples.apartments.models.entities.ApartmentEntity;
@@ -8,6 +10,7 @@ import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 import javax.ws.rs.NotFoundException;
+import javax.ws.rs.core.UriInfo;
 import java.util.List;
 import java.util.logging.Logger;
 import java.util.stream.Collectors;
@@ -30,6 +33,15 @@ public class ApartmentBean {
 
         return resultList.stream().map(ApartmentConverter::toDto).collect(Collectors.toList());
 
+    }
+
+    public List<Apartment> getApartmentsFilter(UriInfo uriInfo) {
+
+        QueryParameters queryParameters = QueryParameters.query(uriInfo.getRequestUri().getQuery()).defaultOffset(0)
+                .build();
+
+        return JPAUtils.queryEntities(em, ApartmentEntity.class, queryParameters).stream()
+                .map(ApartmentConverter::toDto).collect(Collectors.toList());
     }
 
     public Apartment getApartment(Integer id) {

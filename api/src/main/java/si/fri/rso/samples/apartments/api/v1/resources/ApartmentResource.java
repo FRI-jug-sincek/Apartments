@@ -38,6 +38,17 @@ public class ApartmentResource {
     }
 
     @GET
+    @Path("/filtered")
+    public Response getApartmentsFiltered() {
+
+        List<Apartment> apartments;
+
+        apartments = ab.getApartmentsFilter(uriInfo);
+
+        return Response.status(Response.Status.OK).entity(apartments).build();
+    }
+
+    @GET
     @Path("/{apartmentId}")
     public Response getApartment(@PathParam("apartmentId") Integer apartmentId) {
 
@@ -53,7 +64,7 @@ public class ApartmentResource {
     @POST
     public Response createApartment(Apartment apartment) {
 
-        if (apartment.getTitle() == null || apartment.getTenantId() == null || apartment.getLocation() == null) {
+        if (apartment.getTitle() == null || apartment.getTenantId() != 0 || apartment.getLocation() == null) {
             return Response.status(Response.Status.BAD_REQUEST).build();
         }
         else {
