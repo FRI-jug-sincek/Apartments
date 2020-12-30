@@ -22,7 +22,7 @@ public class ApartmentEntity {
     @Column(name = "email")
     private String email;
 
-    @Column(name = "description")
+    @Column(name = "description", length = 1024)
     private String description;
 
     @Column(name = "tenantID")
