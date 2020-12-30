@@ -19,6 +19,12 @@ public class ApartmentEntity {
     @Column(name = "title")
     private String title;
 
+    @Column(name = "email")
+    private String email;
+
+    @Column(name = "description")
+    private String description;
+
     @Column(name = "tenantID")
     private int tenantId;
 
@@ -42,6 +48,22 @@ public class ApartmentEntity {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public int getTenantId() {

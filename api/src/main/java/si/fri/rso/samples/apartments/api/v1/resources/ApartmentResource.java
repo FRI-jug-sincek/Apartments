@@ -64,7 +64,7 @@ public class ApartmentResource {
     @POST
     public Response createApartment(Apartment apartment) {
 
-        if (apartment.getTitle() == null || apartment.getTenantId() != 0 || apartment.getLocation() == null) {
+        if (apartment.getTitle() == null || apartment.getTenantId() == 0 || apartment.getLocation() == null) {
             return Response.status(Response.Status.BAD_REQUEST).build();
         }
         else {

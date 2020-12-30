@@ -10,6 +10,8 @@ public class ApartmentConverter {
         Apartment a = new Apartment();
         a.setId(e.getId());
         a.setTitle(e.getTitle());
+        a.setEmail(e.getEmail());
+        a.setDescription(e.getDescription());
         a.setTenantId(e.getTenantId());
         a.setLocation(e.getLocation());
         a.setCapacity(e.getCapacity());
@@ -23,6 +25,8 @@ public class ApartmentConverter {
 
         e.setId(a.getId());
         e.setTitle(a.getTitle());
+        e.setEmail(a.getEmail());
+        e.setDescription(a.getDescription());
         e.setTenantId(a.getTenantId());
         e.setLocation(a.getLocation());
         e.setCapacity(a.getCapacity());
