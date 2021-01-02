@@ -13,7 +13,7 @@ spec:
         app: apartments
     spec:
       containers:
-        - image: frijugsincek/apartments:2020-12-03-03-38-42
+        - image: frijugsincek/apartments:2020-12-31-03-14-03
           name: apartments
           env:
             - name: KUMULUZEE_DATASOURCES0_CONNECTIONURL
