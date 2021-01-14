@@ -4,17 +4,40 @@ kumuluzee:
     name: dev
   version: 1.0.0
   server:
-    base-url: http://localhost:8080
+    base-url: http://localhost:8082
     http:
       port: 8080
   datasources:
     - jndi-name: jdbc/ApartmentDS
-      connection-url: jdbc:postgresql://localhost:5432/apartments
-      username: dbuser
-      password: postgres
+      #connection-url: jdbc:postgresql://localhost:5431/apartments
+      connection-url: jdbc:postgresql://suleiman.db.elephantsql.com:5432/bfztibdg
+      #username: dbuser
+      #password: postgres
+      username: bfztibdg
+      password: rN-pQby0_aFvXf5WJY_7E24f7RKQGCFq
       max-pool-size: 20
   cors-filter:
     servlet:
       allow-origin: "*"
       allow-subdomains: true
       supported-methods: "GET, POST, DELETE, HEAD, OPTIONS, PUT"
+  logs:
+    config-file: '<?xml version="1.0" encoding="UTF-8"?>
+                            <Configuration name="comments">
+                                <Appenders>
+                                    <Console name="console" target="SYSTEM_OUT">
+                                        <PatternLayout pattern="%d %p %marker %m %X %ex %n"/>
+                                    </Console>
+                                    <Socket name="logstash" host="a12a45a8-71ee-4a08-bac7-18a5023b9068-ls.logit.io"
+                                    port="10465" protocol="udp">
+                                        <JSONLayout complete="false" compact="true" eventEol="true" charset="UTF-8" properties="true"/>
+                                    </Socket>
+                                </Appenders>
+                                <Loggers>
+                                    <!-- Default logger -->
+                                    <Root level="all">
+                                        <AppenderRef ref="console" level="info" />
+                                        <AppenderRef ref="logstash" level="trace" />
+                                    </Root>
+                                </Loggers>
+                            </Configuration>'
