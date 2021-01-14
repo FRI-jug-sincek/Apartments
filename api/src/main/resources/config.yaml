@@ -14,7 +14,7 @@ kumuluzee:
       #username: dbuser
       #password: postgres
       username: bfztibdg
-      password: rN-pQby0_aFvXf5WJY_7E24f7RKQGCFq
+      password: password
       max-pool-size: 20
   cors-filter:
     servlet:
